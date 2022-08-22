@@ -1,0 +1,74 @@
+.frame {
+    position: relative;
+    width: 300px;
+    aspect-ratio: 75.21 / 159.21;
+    border-radius: 2.9rem;
+    box-shadow: inset 0 0 0 .06rem grey,
+    inset 0 0 0 .12rem white,
+    inset 0 0 0 .22rem grey,
+    inset 0 0 0 1rem black;
+}
+
+.notch {
+    width: 7rem;
+    height: 1.4rem;
+    background-color: black;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0 0 .7rem .7rem;
+    z-index: 1;
+}
+
+.notch .camera {
+    width: .85rem;
+    height: .85rem;
+    background-color: hsl(181deg 34% 24%);
+    border-radius: 100%;
+    margin-left: .4rem;
+    margin-top: .05rem;
+    background-image: url('../../assets/images/camera.png');
+    background-size: 100%;
+}
+
+.left-notch {
+    width: calc(50% - 1rem - 3.5rem);
+    height: 50px;
+    background: white;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 1.9rem .4rem 0 0;
+}
+
+.right-notch {
+    width: calc(50% - 1rem - 3.5rem);
+    height: 50px;
+    background: white;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border-radius: .4rem 1.9rem 0 0;
+}
+
+.top-notch {
+    width: calc(7rem + 2rem);
+    height: .7rem;
+    background: black;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.screen {
+    margin: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-radius: 1.9rem;
+}
