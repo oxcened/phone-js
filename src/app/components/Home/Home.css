@@ -1,0 +1,20 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url('../../assets/images/wallpaper.jpeg');
+    background-size: cover;
+}
+
+.temp {
+    margin: 3em .6em 0;
+    padding: 0 .7rem;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    row-gap: 1rem;
+    justify-content: space-between;
+}
+
+.dock {
+    margin: auto .6rem .6rem;
+}

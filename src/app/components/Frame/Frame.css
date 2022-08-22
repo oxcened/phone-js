@@ -33,38 +33,36 @@
 }
 
 .left-notch {
-    width: calc(50% - 1rem - 3.5rem);
-    height: 50px;
-    background: white;
+    width: 0.5rem;
+    height: .4rem;
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    border-radius: 1.9rem .4rem 0 0;
+    z-index: 2;
+    top: .935rem;
+    left: 5.5rem;
+    background-image: radial-gradient(
+            circle at 0px 7px,
+            rgba(0, 0, 0, 0) 0,
+            rgba(0, 0, 0, 0) 6px, black 6px
+    );
 }
 
 .right-notch {
-    width: calc(50% - 1rem - 3.5rem);
-    height: 50px;
-    background: white;
+    width: 0.5rem;
+    height: .4rem;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    border-radius: .4rem 1.9rem 0 0;
-}
-
-.top-notch {
-    width: calc(7rem + 2rem);
-    height: .7rem;
-    background: black;
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 2;
+    top: .937rem;
+    right: 5.44rem;
+    background-image: radial-gradient(
+            circle at 7px 7px,
+            rgba(0, 0, 0, 0) 0,
+            rgba(0, 0, 0, 0) 6px, black 6px
+    );
 }
 
 .screen {
-    margin: 1rem;
     position: absolute;
+    margin: 1rem;
     left: 0;
     right: 0;
     top: 0;

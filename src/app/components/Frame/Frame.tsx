@@ -9,7 +9,6 @@ const Frame = ({ children }: {
       <div className='notch'>
         <div className='camera'></div>
       </div>
-      <div className='top-notch' />
       <div className='left-notch' />
       <div className='right-notch' />
       <div className='screen'>{children}</div>

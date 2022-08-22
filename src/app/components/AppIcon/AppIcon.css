@@ -1,0 +1,18 @@
+.app-icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: .7rem;
+}
+
+.label {
+    text-align: center;
+    font-size: .60rem;
+    color: white;
+    margin-top: .25rem;
+    font-weight: 500;
+}
