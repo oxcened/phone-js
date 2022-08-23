@@ -4,3 +4,7 @@
   min-height: 100vh;
   user-select: none;
 }
+
+.status-bar {
+  position: absolute;
+}

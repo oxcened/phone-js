@@ -4,6 +4,7 @@ import Frame from './features/Frame/Frame';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { AppRoute } from './core/models/AppRoute';
 import FullScreenSpinner from './features/Spinner/FullScreenSpinner';
+import StatusBar from './features/StatusBar/StatusBar';
 
 const Home = React.lazy(() => import('./features/Home/Home'));
 const Notes = React.lazy(() => import('./features/Notes/Notes'));
@@ -12,6 +13,7 @@ function App() {
   return (
     <div className='app'>
       <Frame>
+        <StatusBar />
         <React.Suspense fallback={<FullScreenSpinner />}>
           <BrowserRouter>
             <Routes>
