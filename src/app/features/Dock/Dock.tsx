@@ -1,6 +1,7 @@
 import React from 'react';
 import './Dock.css';
-import AppIcon, { AppIconId } from '../AppIcon/AppIcon';
+import AppIcon from '../AppIcon/AppIcon';
+import { AppIconId } from '../AppIcon/AppIconId';
 
 const Dock = () => {
   return (

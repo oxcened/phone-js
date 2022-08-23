@@ -1,0 +1,18 @@
+export enum AppIconId {
+  VIDEO_CALL,
+  CALENDAR,
+  PHOTOS,
+  CAMERA,
+  EMAIL,
+  NOTES,
+  REMINDERS,
+  STORE,
+  MAPS,
+  HEALTH,
+  WALLET,
+  SETTINGS,
+  PHONE,
+  BROWSER,
+  MESSAGES,
+  MUSIC
+}

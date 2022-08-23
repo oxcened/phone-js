@@ -1,11 +1,16 @@
 import React from 'react';
 import './Home.css';
 import Dock from '../Dock/Dock';
-import AppIcon, { AppIconId } from '../AppIcon/AppIcon';
+import AppIcon from '../AppIcon/AppIcon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import { AppIconId } from '../AppIcon/AppIconId';
+import { useNavigate } from 'react-router-dom';
+import { AppRoute } from '../../core/models/AppRoute';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const appIcons = (
     <div className='temp'>
       <AppIcon id={AppIconId.VIDEO_CALL} />
@@ -14,7 +19,7 @@ const Home = () => {
       <AppIcon id={AppIconId.CAMERA} />
 
       <AppIcon id={AppIconId.EMAIL} />
-      <AppIcon id={AppIconId.NOTES} />
+      <AppIcon id={AppIconId.NOTES} onClick={() => navigate(AppRoute.NOTES)} />
       <AppIcon id={AppIconId.REMINDERS} />
       <AppIcon id={AppIconId.STORE} />
 

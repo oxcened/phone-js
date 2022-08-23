@@ -9,6 +9,10 @@
     border-radius: .7rem;
 }
 
+.icon:active {
+    filter: brightness(.8);
+}
+
 .label {
     text-align: center;
     font-size: .55rem;

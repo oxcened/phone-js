@@ -16,25 +16,22 @@ import maps from '../../../assets/images/app-icons/app-icon-5.png';
 import health from '../../../assets/images/app-icons/app-icon-20.png';
 import wallet from '../../../assets/images/app-icons/app-icon-11.png';
 import settings from '../../../assets/images/app-icons/app-icon-31.png';
+import { AppIconId } from './AppIconId';
 
-export enum AppIconId {
-  VIDEO_CALL,
-  CALENDAR,
-  PHOTOS,
-  CAMERA,
-  EMAIL,
-  NOTES,
-  REMINDERS,
-  STORE,
-  MAPS,
-  HEALTH,
-  WALLET,
-  SETTINGS,
-  PHONE,
-  BROWSER,
-  MESSAGES,
-  MUSIC
-}
+const AppIcon = ({ id, showLabel = true, onClick }: {
+  id: AppIconId;
+  showLabel?: boolean;
+  onClick?: () => void;
+}) => {
+  return (
+    <div className='app-icon'>
+      <img className='icon' src={icon[id]} alt={label[id]} onClick={onClick} />
+      {showLabel && (
+        <div className='label'>{label[id]}</div>
+      )}
+    </div>
+  );
+};
 
 const label = {
   [AppIconId.VIDEO_CALL]: 'Video Call',
@@ -52,7 +49,7 @@ const label = {
   [AppIconId.PHONE]: 'Phone',
   [AppIconId.BROWSER]: 'Browser',
   [AppIconId.MESSAGES]: 'Messages',
-  [AppIconId.MUSIC]: 'Music',
+  [AppIconId.MUSIC]: 'Music'
 };
 
 const icon = {
@@ -71,18 +68,7 @@ const icon = {
   [AppIconId.PHONE]: phone,
   [AppIconId.BROWSER]: browser,
   [AppIconId.MESSAGES]: messages,
-  [AppIconId.MUSIC]: music,
-};
-
-const AppIcon = ({ id, showLabel = true }: { id: AppIconId, showLabel?: boolean; }) => {
-  return (
-    <div className='app-icon'>
-      <img className='icon' src={icon[id]} alt={label[id]} />
-      {showLabel && (
-        <div className='label'>{label[id]}</div>
-      )}
-    </div>
-  );
+  [AppIconId.MUSIC]: music
 };
 
 export default AppIcon;
