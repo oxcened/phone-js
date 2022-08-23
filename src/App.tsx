@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Frame from './app/components/Frame/Frame';
-import Home from './app/components/Home/Home';
+import Frame from './components/Frame/Frame';
+import Home from './components/Home/Home';
 
 function App() {
   return (
