@@ -9,9 +9,14 @@ const Frame = ({ children }: {
       <div className='notch'>
         <div className='camera'></div>
       </div>
+
       <div className='left-notch' />
       <div className='right-notch' />
       <div className='screen'>{children}</div>
+      <div className='button slider' />
+      <div className='button volume-up' />
+      <div className='button volume-down' />
+      <div className='button power' />
     </div>
   );
 };
