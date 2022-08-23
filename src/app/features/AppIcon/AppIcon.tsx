@@ -1,21 +1,21 @@
 import React from 'react';
 import './AppIcon.css';
-import phone from '../../assets/images/app-icons/app-icon-37.png';
-import browser from '../../assets/images/app-icons/app-icon-3.png';
-import messages from '../../assets/images/app-icons/app-icon-6.png';
-import music from '../../assets/images/app-icons/app-icon-18.png';
-import videoCall from '../../assets/images/app-icons/app-icon-7.png';
-import calendar from '../../assets/images/app-icons/app-icon-15.png';
-import photos from '../../assets/images/app-icons/app-icon-13.png';
-import camera from '../../assets/images/app-icons/app-icon-21.png';
-import email from '../../assets/images/app-icons/app-icon-9.png';
-import notes from '../../assets/images/app-icons/app-icon-8.png';
-import reminders from '../../assets/images/app-icons/app-icon-14.png';
-import store from '../../assets/images/app-icons/app-icon-25.png';
-import maps from '../../assets/images/app-icons/app-icon-5.png';
-import health from '../../assets/images/app-icons/app-icon-20.png';
-import wallet from '../../assets/images/app-icons/app-icon-11.png';
-import settings from '../../assets/images/app-icons/app-icon-31.png';
+import phone from '../../../assets/images/app-icons/app-icon-37.png';
+import browser from '../../../assets/images/app-icons/app-icon-3.png';
+import messages from '../../../assets/images/app-icons/app-icon-6.png';
+import music from '../../../assets/images/app-icons/app-icon-18.png';
+import videoCall from '../../../assets/images/app-icons/app-icon-7.png';
+import calendar from '../../../assets/images/app-icons/app-icon-15.png';
+import photos from '../../../assets/images/app-icons/app-icon-13.png';
+import camera from '../../../assets/images/app-icons/app-icon-21.png';
+import email from '../../../assets/images/app-icons/app-icon-9.png';
+import notes from '../../../assets/images/app-icons/app-icon-8.png';
+import reminders from '../../../assets/images/app-icons/app-icon-14.png';
+import store from '../../../assets/images/app-icons/app-icon-25.png';
+import maps from '../../../assets/images/app-icons/app-icon-5.png';
+import health from '../../../assets/images/app-icons/app-icon-20.png';
+import wallet from '../../../assets/images/app-icons/app-icon-11.png';
+import settings from '../../../assets/images/app-icons/app-icon-31.png';
 
 export enum AppIconId {
   VIDEO_CALL,
