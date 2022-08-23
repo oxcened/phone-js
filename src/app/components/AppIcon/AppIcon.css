@@ -11,8 +11,12 @@
 
 .label {
     text-align: center;
-    font-size: .60rem;
+    font-size: .55rem;
     color: white;
     margin-top: .25rem;
     font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 2.8rem;
 }
