@@ -1,0 +1,42 @@
+.note .content {
+    padding: .4rem 1rem 0;
+}
+
+.note .title {
+    font-weight: 500;
+    margin: 0;
+    font-size: .8rem;
+}
+
+.note .description {
+    color: rgba(0, 0, 0, 0.35);
+    margin: .1rem 0 0;
+    font-size: .7rem;
+}
+
+.note .divider {
+    background: rgba(0, 0, 0, 0.15);
+    height: .01rem;
+    margin-top: .4rem;
+    margin-left: 1rem;
+}
+
+.note:last-child .content {
+    padding-bottom: .4rem;
+}
+
+.note:last-child .divider {
+    display: none;
+}
+
+.note:active {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.note:first-child {
+    border-radius: .4rem .4rem 0 0;
+}
+
+.note:last-child {
+    border-radius: 0 0 .4rem .4rem;
+}

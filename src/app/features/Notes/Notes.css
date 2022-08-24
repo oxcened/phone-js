@@ -1,0 +1,69 @@
+.notes {
+    height: 100%;
+}
+
+.notes .safe-area {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.notes .safe-area > .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.notes .search {
+    display: flex;
+    margin-top: .4rem;
+    background: rgb(232, 232, 232);
+    border-radius: .4rem;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.notes .search-input {
+    border: none;
+    background: rgb(232, 232, 232);
+    padding: .3rem .5rem;
+    flex: 1;
+    border-radius: .4rem;
+}
+
+.notes .search-input::placeholder {
+    font-size: .8rem;
+    color: rgba(0, 0, 0, 0.35);
+}
+
+.notes .search-icon {
+    margin-left: .5rem;
+}
+
+.notes .list {
+    margin-top: .6rem;
+    border-radius: .4rem;
+    background: white;
+    box-shadow: 0 0 .2rem .01rem rgba(0, 0, 0, 0.03);
+}
+
+.notes .bottom-bar .notes-count {
+    font-size: .5rem;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.create-icon {
+    position: absolute;
+    right: 1rem;
+    top: 30%;
+    transform: translateY(-50%);
+    transition: opacity 250ms;
+}
+
+.create-icon:active {
+    opacity: 0.5;
+}

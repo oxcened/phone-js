@@ -1,4 +1,3 @@
-import React from 'react';
 import './AppIcon.css';
 import phone from '../../../assets/images/app-icons/app-icon-37.png';
 import browser from '../../../assets/images/app-icons/app-icon-3.png';

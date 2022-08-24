@@ -1,0 +1,4 @@
+.safe-area {
+    padding-top: 2.5rem;
+    height: calc(100% - 2.5rem);
+}

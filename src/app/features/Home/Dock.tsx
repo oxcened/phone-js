@@ -1,4 +1,3 @@
-import React from 'react';
 import './Dock.css';
 import AppIcon from '../AppIcon/AppIcon';
 import { AppIconId } from '../AppIcon/AppIconId';

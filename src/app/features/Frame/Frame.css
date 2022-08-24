@@ -1,6 +1,6 @@
 .frame {
     position: relative;
-    width: 300px;
+    width: 18.75rem;
     aspect-ratio: 75.21 / 159.21;
     border-radius: 2.9rem;
     box-shadow: inset 0 0 0 .06rem grey,
@@ -26,7 +26,7 @@
     height: .85rem;
     background-color: hsl(181deg 34% 24%);
     border-radius: 100%;
-    margin-left: .4rem;
+    margin-left: .5rem;
     margin-top: .05rem;
     background-image: url('../../../assets/images/camera.png');
     background-size: 100%;
@@ -38,11 +38,11 @@
     height: .4rem;
     position: absolute;
     z-index: 2;
-    top: .89rem;
+    top: .88rem;
 }
 
 .left-notch {
-    left: 5.61rem;
+    left: 5.62rem;
     background-image: radial-gradient(
             circle at 0px 6px,
             rgba(0, 0, 0, 0) 0,
@@ -51,7 +51,7 @@
 }
 
 .right-notch {
-    right: 5.61rem;
+    right: 5.62rem;
     background-image: radial-gradient(
             circle at 8px 6px,
             rgba(0, 0, 0, 0) 0,

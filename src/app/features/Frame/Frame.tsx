@@ -1,9 +1,7 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import './Frame.css';
 
-const Frame = ({ children }: {
-  children?: React.ReactNode;
-}) => {
+const Frame = ({ children }: PropsWithChildren) => {
   return (
     <div className='frame'>
       <div className='notch'>

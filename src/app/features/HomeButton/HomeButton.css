@@ -1,0 +1,10 @@
+.home-button {
+    height: .22rem;
+    width: 6rem;
+    background: black;
+    position: absolute;
+    bottom: .35rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 1rem;
+}
