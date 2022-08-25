@@ -11,10 +11,10 @@
 
 .notch {
     width: 7rem;
-    height: 1.4rem;
+    height: 1.5rem;
     background-color: black;
     position: absolute;
-    top: 1rem;
+    top: 0.9rem;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 0 0 1rem 1rem;
@@ -27,7 +27,7 @@
     background-color: hsl(181deg 34% 24%);
     border-radius: 100%;
     margin-left: .5rem;
-    margin-top: .05rem;
+    margin-top: .15rem;
     background-image: url('assets/images/camera.png');
     background-size: 100%;
 }
