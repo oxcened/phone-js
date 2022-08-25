@@ -23,11 +23,14 @@ const NoteDetail = ({ note, onDone }: {
   }, [note]);
 
   const onSubmit = () => {
+    const now = new Date().getTime();
+
     onDone?.({
       id: newId,
-      createdAt: new Date().getTime(),
+      createdAt: now,
       ...note ? note : {},
-      content
+      content,
+      editedAt: now
     });
 
     textarea.current?.blur();

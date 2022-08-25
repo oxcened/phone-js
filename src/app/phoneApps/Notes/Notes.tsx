@@ -5,6 +5,7 @@ import { Note } from './Note';
 
 const NotesList = React.lazy(() => import('./NotesList'));
 const NoteDetail = React.lazy(() => import('./NoteDetail'));
+const sortNotes = (notes: Note[]) => notes.sort((a, b) => b.editedAt - a.editedAt);
 
 const Notes = () => {
   const [notes, setNotes] = useState<ReadonlyArray<Note>>([]);
@@ -16,8 +17,10 @@ const Notes = () => {
     [notes, selectedId]
   );
 
-  const onNew = (note: Note) => setNotes([...notes, note])
-  const onEdit = (editedNote: Note) => setNotes(notes.map(note => {
+  const setOrderedNotes = (notes: Note[]) => setNotes(sortNotes([...notes]));
+  const onNew = (note: Note) => setOrderedNotes([...notes, note])
+
+  const onEdit = (editedNote: Note) => setOrderedNotes(notes.map(note => {
     if (note.id === editedNote.id) return editedNote;
     else return note;
   }));
