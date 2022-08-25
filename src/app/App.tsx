@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import FullScreenSpinner from './structural/Spinner/FullScreenSpinner';
 import Phone from './structural/Phone/Phone';
-import { AppRoute } from './AppRoute';
 import phoneApps from './phoneApps/phoneApps';
 
 const Home = React.lazy(() => import('./structural/Home/Home'));
@@ -23,7 +22,7 @@ function App() {
       <React.Suspense fallback={<FullScreenSpinner />}>
         <BrowserRouter>
           <Routes>
-            <Route path={AppRoute.ROOT} element={<Phone />}>
+            <Route path='/' element={<Phone />}>
               <Route index element={<Home />} />
               {phoneAppsRoutes}
             </Route>

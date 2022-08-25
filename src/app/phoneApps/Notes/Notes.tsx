@@ -1,5 +1,4 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { AppRoute } from 'app/AppRoute';
 import React, { useMemo, useState } from 'react';
 import { Note } from './Note';
 
@@ -33,8 +32,8 @@ const Notes = () => {
   return (
     <Routes>
       <Route index element={<NotesList notes={notes} onSelect={onSelect} />} />
-      <Route path={AppRoute.NOTE_DETAIL_NEW} element={<NoteDetail onDone={onNew} />} />
-      <Route path={AppRoute.NOTE_DETAIL_EDIT} element={<NoteDetail note={selectedNote} onDone={onEdit} />} />
+      <Route path='new' element={<NoteDetail onDone={onNew} />} />
+      <Route path=':id' element={<NoteDetail note={selectedNote} onDone={onEdit} />} />
     </Routes>
   );
 };

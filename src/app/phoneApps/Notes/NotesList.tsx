@@ -6,7 +6,6 @@ import HomeButton from '../../structural/HomeButton/HomeButton';
 import createIcon from 'assets/images/system-icons/create_note.png';
 import searchIcon from 'assets/images/system-icons/search.png';
 import NoteListItem from './NoteListItem';
-import { Destination } from 'app/AppRoute';
 import { Note } from './Note';
 
 const NotesList = ({ notes, onSelect }: {
@@ -46,7 +45,7 @@ const NotesList = ({ notes, onSelect }: {
           height={15}
           width={15}
           className='create-icon'
-          onClick={() => navigate(Destination.NOTE_DETAIL_NEW)}
+          onClick={() => navigate('new')}
         />
       </BottomBar>
 

@@ -1,5 +1,4 @@
 import { ComponentType, LazyExoticComponent } from 'react';
-import { AppRoute, Destination } from '../AppRoute';
 
 export type PhoneApp<T extends ComponentType> = {
   /** Unique identifier */
@@ -15,8 +14,8 @@ export type PhoneApp<T extends ComponentType> = {
   iconPath: string;
 
   /** Route associated to the index component */
-  route: AppRoute;
+  route: string;
 
   /** Route to navigate when clicking on the launcher icon - Usually matches [route] */
-  destination: Destination;
+  destination: string;
 };
