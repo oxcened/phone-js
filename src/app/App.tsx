@@ -16,7 +16,7 @@ function App() {
         <Route key={app.id} path={app.route} element={<Element />} />
       );
     });
-  }, [phoneApps]);
+  }, []);
 
   return (
     <div className='app'>

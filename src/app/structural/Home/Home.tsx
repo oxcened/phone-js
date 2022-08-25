@@ -30,7 +30,7 @@ const Home = () => {
         <AppIcon key={app.id} title={app.title} iconPath={app.iconPath} disable={false} onClick={onClick} />
       );
     });
-  }, [phoneApps]);
+  }, []);
 
   const appIcons = (
     <SwiperSlide>
