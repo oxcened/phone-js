@@ -3,17 +3,26 @@
     flex-direction: column;
 }
 
+.app-icon.disable {
+    opacity: .6;
+}
+
 .icon {
     width: 2.8rem;
     height: 2.8rem;
     border-radius: .7rem;
+    cursor: pointer;
 }
 
-.icon:active {
+.app-icon .icon:active {
     filter: brightness(.8);
 }
 
-.label {
+.app-icon.disable .icon {
+    cursor: not-allowed;
+}
+
+.app-icon .label {
     text-align: center;
     font-size: .55rem;
     color: white;

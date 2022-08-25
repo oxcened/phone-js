@@ -1,4 +1,4 @@
-import spinner from '../../../assets/images/system-icons/spinner.gif';
+import spinner from 'assets/images/system-icons/spinner.gif';
 
 const Spinner = () => {
   return (

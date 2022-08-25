@@ -30,6 +30,7 @@
     padding: .3rem .5rem;
     flex: 1;
     border-radius: .4rem;
+    outline: none;
 }
 
 .notes .search-input::placeholder {
@@ -62,8 +63,9 @@
     top: 30%;
     transform: translateY(-50%);
     transition: opacity 250ms;
+    cursor: pointer;
 }
 
 .create-icon:active {
-    opacity: 0.5;
+    opacity: .5;
 }

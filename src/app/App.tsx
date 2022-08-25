@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import './App.css';
-import Frame from './features/Frame/Frame';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { AppRoute } from './core/models/AppRoute';
-import FullScreenSpinner from './features/Spinner/FullScreenSpinner';
-import StatusBar from './features/StatusBar/StatusBar';
-import NoteDetail from './features/Notes/NoteDetail';
+import FullScreenSpinner from './structural/Spinner/FullScreenSpinner';
+import Phone from './structural/Phone/Phone';
+import { AppRoute } from './AppRoute';
+import phoneApps from './phoneApps/phoneApps';
 
-const Home = React.lazy(() => import('./features/Home/Home'));
-const Notes = React.lazy(() => import('./features/Notes/Notes'));
+const Home = React.lazy(() => import('./structural/Home/Home'));
 
 function App() {
+  const phoneAppsRoutes = useMemo(() => {
+    return phoneApps.map(app => {
+      const Element = app.element;
+      return (
+        <Route key={app.id} path={app.route} element={<Element />} />
+      );
+    });
+  }, [phoneApps]);
+
   return (
     <div className='app'>
-      <Frame>
-        <StatusBar />
-        <React.Suspense fallback={<FullScreenSpinner />}>
-          <BrowserRouter>
-            <Routes>
+      <React.Suspense fallback={<FullScreenSpinner />}>
+        <BrowserRouter>
+          <Routes>
+            <Route path={AppRoute.ROOT} element={<Phone />}>
               <Route index element={<Home />} />
-              <Route path={AppRoute.NOTES} element={<Notes />} />
-              <Route path={AppRoute.NOTE_DETAIL_NEW} element={<NoteDetail />} />
-              <Route path={AppRoute.NOTE_DETAIL_EDIT} element={<NoteDetail />} />
-            </Routes>
-          </BrowserRouter>
-        </React.Suspense>
-      </Frame>
+              {phoneAppsRoutes}
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </React.Suspense>
     </div>
   );
 }

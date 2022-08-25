@@ -1,25 +1,29 @@
 body {
-  margin: 0;
-  font-family: 'SF-Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+}
+
+body,
+* {
+    font-family: 'SF-Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
-  src: url('./assets/fonts/sfpro.otf');
-  font-family: 'SF-Pro';
+    src: url('./assets/fonts/sfpro.otf');
+    font-family: 'SF-Pro';
 }
 
 @font-face {
-  src: url('assets/fonts/sfpro-medium.otf');
-  font-family: 'SF-Pro';
-  font-weight: 500;
+    src: url('assets/fonts/sfpro-medium.otf');
+    font-family: 'SF-Pro';
+    font-weight: 500;
 }
 
 @font-face {
-  src: url('assets/fonts/sfpro-bold.otf');
-  font-family: 'SF-Pro';
-  font-weight: 600;
+    src: url('assets/fonts/sfpro-bold.otf');
+    font-family: 'SF-Pro';
+    font-weight: 600;
 }

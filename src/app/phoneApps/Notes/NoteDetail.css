@@ -1,0 +1,43 @@
+.note-detail {
+    height: 100%;
+}
+
+.note-detail textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem 1rem 0;
+}
+
+.note-detail .toolbar {
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.note-detail .submit {
+    color: #D99C06;
+    font-weight: 500;
+    font-size: .8rem;
+    margin-left: auto;
+}
+
+.note-detail .back {
+    font-size: .8rem;
+    color: #D99C06;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.note-detail .back,
+.note-detail .submit {
+    transition: opacity 250ms;
+    cursor: pointer;
+}
+
+.note-detail .back:active,
+.note-detail .submit:active {
+    opacity: .5;
+}

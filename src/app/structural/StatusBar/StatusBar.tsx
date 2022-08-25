@@ -1,6 +1,6 @@
 import './StatusBar.css';
-import signal from '../../../assets/images/system-icons/signal.png';
-import battery from '../../../assets/images/system-icons/battery.png';
+import signal from 'assets/images/system-icons/signal.png';
+import battery from 'assets/images/system-icons/battery.png';
 import Clock from './Clock';
 
 const StatusBar = () => {
