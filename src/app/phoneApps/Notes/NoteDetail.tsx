@@ -9,6 +9,7 @@ const NoteDetail = ({ note, onDone }: {
   note?: Note;
   onDone?: (note: Note) => void;
 }) => {
+  const isEdit = !!note
   const textarea = useRef<HTMLTextAreaElement>(null);
   const navigate = useNavigate();
   const newId = useId();
@@ -58,7 +59,7 @@ const NoteDetail = ({ note, onDone }: {
         </div>
 
         <textarea
-          autoFocus
+          autoFocus={!isEdit}
           ref={textarea}
           value={content}
           onChange={onTextareaChange}
