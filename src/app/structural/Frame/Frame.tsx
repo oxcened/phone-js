@@ -10,7 +10,7 @@ const Frame = ({ children }: PropsWithChildren) => {
   }, [frame]);
 
   const updateZoom = useCallback(() => {
-    if (!rect) {
+    if (!frame.current || !rect) {
       return;
     }
 
@@ -19,7 +19,7 @@ const Frame = ({ children }: PropsWithChildren) => {
       window.innerHeight / (rect.height ?? 0)
     );
 
-    (document.getElementsByClassName('frame')[0] as any).style.transform = `scale(${scale})`;
+    frame.current.style.transform = `scale(${scale})`;
   }, [rect])
 
   useEffect(() => {

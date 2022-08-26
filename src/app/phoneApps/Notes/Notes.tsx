@@ -17,7 +17,11 @@ const Notes = () => {
   );
 
   const setOrderedNotes = (notes: Note[]) => setNotes(sortNotes([...notes]));
-  const onNew = (note: Note) => setOrderedNotes([...notes, note])
+
+  const onNew = (note: Note) => {
+    setOrderedNotes([...notes, note]);
+    setSelectedId(note.id);
+  };
 
   const onEdit = (editedNote: Note) => setOrderedNotes(notes.map(note => {
     if (note.id === editedNote.id) return editedNote;

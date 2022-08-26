@@ -25,18 +25,20 @@ const NoteDetail = ({ note, onDone }: {
   const onSubmit = () => {
     const now = new Date().getTime();
 
-    onDone?.({
+    const newNote = {
       id: newId,
       createdAt: now,
       ...note ? note : {},
       content,
       editedAt: now
-    });
+    };
+
+    onDone?.(newNote);
 
     textarea.current?.blur();
     setShowSubmit(false);
 
-    navigate(`../${newId}`, { replace: true });
+    navigate(`../${newNote.id}`, { replace: true });
   };
 
   const onTextareaChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
