@@ -37,8 +37,6 @@ const NoteDetail = ({ note, onDone }: {
 
     textarea.current?.blur();
     setShowSubmit(false);
-
-    navigate(`../${newNote.id}`, { replace: true });
   };
 
   const onTextareaChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {

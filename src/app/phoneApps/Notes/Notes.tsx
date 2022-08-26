@@ -21,6 +21,7 @@ const Notes = () => {
   const onNew = (note: Note) => {
     setOrderedNotes([...notes, note]);
     setSelectedId(note.id);
+    navigate(note.id, { replace: true });
   };
 
   const onEdit = (editedNote: Note) => setOrderedNotes(notes.map(note => {
