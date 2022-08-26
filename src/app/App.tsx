@@ -19,16 +19,16 @@ function App() {
 
   return (
     <div className='app'>
-      <React.Suspense fallback={<FullScreenSpinner />}>
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<Phone />}>
-              <Route index element={<Home />} />
+      <Phone>
+        <React.Suspense fallback={<FullScreenSpinner />}>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Home />} />
               {phoneAppsRoutes}
-            </Route>
-          </Routes>
-        </BrowserRouter>
-      </React.Suspense>
+            </Routes>
+          </BrowserRouter>
+        </React.Suspense>
+      </Phone>
     </div>
   );
 }
