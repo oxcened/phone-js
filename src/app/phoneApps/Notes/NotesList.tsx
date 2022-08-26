@@ -7,7 +7,7 @@ import createIcon from 'assets/images/system-icons/create_note.png';
 import searchIcon from 'assets/images/system-icons/search.png';
 import NoteRow from './NoteRow';
 import { Note } from './Note';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 const NotesList = ({ notes, onSelect, onDelete }: {
   notes: ReadonlyArray<Note>;
