@@ -1,4 +1,4 @@
-import './NoteListItem.css';
+import './NoteRow.css';
 import { Note } from './Note';
 import { useEffect, useMemo, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,7 +6,7 @@ import 'swiper/css';
 import deleteIcon from 'assets/images/system-icons/delete_row.png';
 import { Swiper as SwiperClass } from 'swiper/types';
 
-const NoteListItem = (
+const NoteRow = (
   {
     note: { content, editedAt },
     isOpenActions,
@@ -66,10 +66,12 @@ const NoteListItem = (
         <img
           src={deleteIcon}
           className='delete'
+          alt='Delete note'
+          title='Delete note'
         />
       </SwiperSlide>
     </Swiper>
   );
 };
 
-export default NoteListItem;
+export default NoteRow;

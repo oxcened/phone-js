@@ -5,7 +5,7 @@ import BottomBar from '../../structural/BottomBar/BottomBar';
 import HomeButton from '../../structural/HomeButton/HomeButton';
 import createIcon from 'assets/images/system-icons/create_note.png';
 import searchIcon from 'assets/images/system-icons/search.png';
-import NoteListItem from './NoteListItem';
+import NoteRow from './NoteRow';
 import { Note } from './Note';
 import { useCallback, useState } from 'react';
 
@@ -39,7 +39,7 @@ const NotesList = ({ notes, onSelect, onDelete }: {
 
         <div className='list'>
           {notes.map(note => (
-            <NoteListItem
+            <NoteRow
               key={note.id}
               note={note}
               isOpenActions={getOpenActions(note.id)}
@@ -55,6 +55,7 @@ const NotesList = ({ notes, onSelect, onDelete }: {
         <span className='notes-count'>{notes.length || 'No'} Notes</span>
         <img
           alt='Create Note'
+          title='Create Note'
           src={createIcon}
           height={15}
           width={15}
