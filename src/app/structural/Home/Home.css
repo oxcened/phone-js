@@ -4,17 +4,17 @@
     background-size: cover;
 }
 
-.safe-area {
+.home .safe-area {
     display: flex;
     flex-direction: column;
 }
 
-.swiper {
+.home .swiper {
     width: 100%;
     height: 100%;
 }
 
-.page {
+.home .page {
     margin: .5rem .6rem 0;
     padding: 0 .7rem;
     display: grid;
@@ -23,6 +23,6 @@
     justify-content: space-between;
 }
 
-.dock {
+.home .dock {
     margin: auto .6rem .6rem;
 }

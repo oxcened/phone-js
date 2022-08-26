@@ -7,12 +7,19 @@ import createIcon from 'assets/images/system-icons/create_note.png';
 import searchIcon from 'assets/images/system-icons/search.png';
 import NoteListItem from './NoteListItem';
 import { Note } from './Note';
+import { useCallback, useState } from 'react';
 
-const NotesList = ({ notes, onSelect }: {
+const NotesList = ({ notes, onSelect, onDelete }: {
   notes: ReadonlyArray<Note>;
   onSelect?: (id: Note['id']) => void;
+  onDelete?: (id: Note['id']) => void;
 }) => {
   const navigate = useNavigate();
+  const [actionsOpenIndex, setActionsOpenIndex] = useState<string>();
+
+  const getOpenActions = useCallback((id: Note['id']) => {
+    return actionsOpenIndex === id;
+  }, [actionsOpenIndex]);
 
   return (
     <div className='notes'>
@@ -32,7 +39,14 @@ const NotesList = ({ notes, onSelect }: {
 
         <div className='list'>
           {notes.map(note => (
-            <NoteListItem key={note.id} note={note} onClick={() => onSelect?.(note.id)} />
+            <NoteListItem
+              key={note.id}
+              note={note}
+              isOpenActions={getOpenActions(note.id)}
+              onClick={() => onSelect?.(note.id)}
+              onDelete={() => onDelete?.(note.id)}
+              onOpenActions={() => setActionsOpenIndex(note.id)}
+            />
           ))}
         </div>
       </SafeArea>

@@ -33,14 +33,28 @@
     display: none;
 }
 
-.note:active {
+.note .content:active {
     background: rgba(0, 0, 0, 0.1);
 }
 
 .note:first-child {
-    border-radius: .4rem .4rem 0 0;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
 }
 
 .note:last-child {
-    border-radius: 0 0 .4rem .4rem;
+    border-bottom-left-radius: .4rem;
+    border-bottom-right-radius: .4rem;
+}
+
+.note .delete-slide {
+    width: 3rem;
+    background: rgb(253, 61, 51);
+    height: unset;
+    display: grid;
+    place-content: center;
+}
+
+.note .delete {
+    height: 1.2rem;
 }

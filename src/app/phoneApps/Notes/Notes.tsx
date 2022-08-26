@@ -16,27 +16,33 @@ const Notes = () => {
     [notes, selectedId]
   );
 
-  const setOrderedNotes = (notes: Note[]) => setNotes(sortNotes([...notes]));
-
   const onNew = (note: Note) => {
-    setOrderedNotes([...notes, note]);
+    setNotes(notes => sortNotes([...notes, note]));
     setSelectedId(note.id);
     navigate(note.id, { replace: true });
   };
 
-  const onEdit = (editedNote: Note) => setOrderedNotes(notes.map(note => {
-    if (note.id === editedNote.id) return editedNote;
-    else return note;
-  }));
+  const onEdit = (editedNote: Note) => setNotes(notes => {
+    return sortNotes(notes.map(note => {
+      if (note.id === editedNote.id) return editedNote;
+      else return note;
+    }));
+  });
 
   const onSelect = (id: Note['id']) => {
     setSelectedId(id);
     navigate(id);
   };
 
+  const onDelete = (id: Note['id']) => {
+    setNotes(notes => {
+      return sortNotes([...notes].filter(note => note.id !== id));
+    });
+  };
+
   return (
     <Routes>
-      <Route index element={<NotesList notes={notes} onSelect={onSelect} />} />
+      <Route index element={<NotesList notes={notes} onSelect={onSelect} onDelete={onDelete} />} />
       <Route path='new' element={<NoteDetail onDone={onNew} />} />
       <Route path=':id' element={<NoteDetail note={selectedNote} onDone={onEdit} />} />
     </Routes>
