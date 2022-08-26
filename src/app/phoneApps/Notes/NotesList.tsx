@@ -7,7 +7,7 @@ import createIcon from 'assets/images/system-icons/create_note.png';
 import searchIcon from 'assets/images/system-icons/search.png';
 import NoteRow from './NoteRow';
 import { Note } from './Note';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 const NotesList = ({ notes, onSelect, onDelete }: {
   notes: ReadonlyArray<Note>;
@@ -16,6 +16,11 @@ const NotesList = ({ notes, onSelect, onDelete }: {
 }) => {
   const navigate = useNavigate();
   const [actionsOpenIndex, setActionsOpenIndex] = useState<string>();
+  const [search, setSearch] = useState<string>('');
+
+  const filteredNotes = useMemo(() => {
+    return notes.filter(note => note.content.match(search))
+  }, [search, notes]);
 
   const getOpenActions = useCallback((id: Note['id']) => {
     return actionsOpenIndex === id;
@@ -34,11 +39,16 @@ const NotesList = ({ notes, onSelect, onDelete }: {
             width={12}
             className='search-icon'
           />
-          <input className='search-input' placeholder='Search'></input>
+          <input
+            className='search-input'
+            placeholder='Search'
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
         </div>
 
         <div className='list'>
-          {notes.map(note => (
+          {filteredNotes.map(note => (
             <NoteRow
               key={note.id}
               note={note}
