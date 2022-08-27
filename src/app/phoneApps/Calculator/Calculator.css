@@ -52,12 +52,6 @@
     font-size: 2rem;
 }
 
-.calculator .equals,
-.calculator .comma,
-.calculator .split {
-    padding-bottom: .4rem;
-}
-
 .calculator .operator:active {
     filter: brightness(1.2);
 }
@@ -81,8 +75,22 @@
     filter: brightness(1.2);
 }
 
+.calculator .equals,
+.calculator .comma,
+.calculator .split {
+    padding-bottom: .4rem;
+}
+
+.calculator .multiply img,
+.calculator .minus img,
+.calculator .plus img {
+    filter: invert(1);
+}
+
 .calculator .ac {
     grid-area: ac;
+    font-weight: 500;
+    font-size: 1.4rem;
 }
 
 .calculator .negative {
@@ -91,15 +99,13 @@
 
 .calculator .percentage {
     grid-area: percentage;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .calculator .split {
     grid-area: split;
-}
-
-.calculator .number.n0 {
-    place-content: center flex-start;
-    padding-left: 1.35rem;
+    font-size: 2.2rem;
 }
 
 .calculator .equals {
@@ -111,22 +117,7 @@
     padding-top: .3rem;
 }
 
-.calculator .multiply img,
-.calculator .minus img,
-.calculator .plus img {
-    filter: invert(1);
-}
-
-.calculator .ac {
-    font-weight: 500;
-    font-size: 1.4rem;
-}
-
-.calculator .percentage {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.calculator .split {
-    font-size: 2.2rem;
+.calculator .number.n0 {
+    place-content: center flex-start;
+    padding-left: 1.35rem;
 }
