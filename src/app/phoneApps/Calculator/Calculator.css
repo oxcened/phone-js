@@ -108,6 +108,7 @@
 
 .calculator .comma {
     grid-area: comma;
+    padding-top: .3rem;
 }
 
 .calculator .multiply img,

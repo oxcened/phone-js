@@ -40,7 +40,7 @@ const Calculator = () => {
             <img src={plusIcon} height={25} alt='Plus' />
           </div>
           <div className='operator equals'>=</div>
-          <div className='operator comma'>,</div>
+          <div className='number comma'>,</div>
           {numbers}
         </div>
       </PhoneAppScreen>
