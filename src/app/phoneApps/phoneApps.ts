@@ -1,6 +1,7 @@
 import React from 'react';
 import { PhoneApp } from './PhoneApp';
 import notesIcon from 'assets/images/app-icons/app-icon-8.png'
+import calculatorIcon from 'assets/images/app-icons/app-icon-41.png'
 
 const phoneApps: PhoneApp<any>[] = [
   {
@@ -10,6 +11,14 @@ const phoneApps: PhoneApp<any>[] = [
     title: 'Notes',
     route: 'notes/*',
     destination: 'notes'
+  },
+  {
+    id: 'calculator',
+    element: React.lazy(() => import('./Calculator/Calculator')),
+    iconPath: calculatorIcon,
+    title: 'Calculator',
+    route: 'calculator/*',
+    destination: 'calculator'
   }
 ];
 

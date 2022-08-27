@@ -4,7 +4,6 @@ import AppIcon from '../AppIcon/AppIcon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useNavigate } from 'react-router-dom';
-import SafeArea from '../SafeArea/SafeArea';
 import { useMemo } from 'react';
 import phoneApps from '../../phoneApps/phoneApps';
 import videoCall from 'assets/images/app-icons/app-icon-7.png';
@@ -18,6 +17,7 @@ import maps from 'assets/images/app-icons/app-icon-5.png';
 import health from 'assets/images/app-icons/app-icon-20.png';
 import wallet from 'assets/images/app-icons/app-icon-11.png';
 import settings from 'assets/images/app-icons/app-icon-31.png';
+import PhoneAppScreen from '../PhoneAppScreen/PhoneAppScreen';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -53,14 +53,14 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <SafeArea>
+      <PhoneAppScreen showHomeButton={false}>
         <Swiper>
           {appIcons}
           {appIcons}
           {appIcons}
         </Swiper>
         <Dock />
-      </SafeArea>
+      </PhoneAppScreen>
     </div>
   );
 };

@@ -1,0 +1,131 @@
+.calculator {
+    height: 100%;
+    background: black;
+    color: white;
+}
+
+.calculator .safe-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator .text-container {
+    flex: 35%;
+    display: grid;
+    place-content: end;
+    padding: .5rem 1rem;
+    box-sizing: border-box;
+    font-size: 4rem;
+}
+
+.calculator .buttons {
+    flex: 65%;
+    display: grid;
+    grid-template-areas:
+                "ac negative percentage split"
+                "n7 n8 n9 multiply"
+                "n4 n5 n6 minus"
+                "n1 n2 n3 plus"
+                "n0 n0 comma equals";
+    column-gap: .53rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 2.5rem;
+    padding: 0 .4rem;
+}
+
+.calculator .buttons > div {
+    --size: 3.6rem;
+    height: var(--size);
+    width: 100%;
+    border-radius: 2rem;
+    display: grid;
+    place-content: center;
+    justify-self: center;
+    align-self: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: filter 200ms;
+}
+
+.calculator .operator {
+    background: #ffb23c;
+    font-size: 2rem;
+}
+
+.calculator .equals,
+.calculator .comma,
+.calculator .split {
+    padding-bottom: .4rem;
+}
+
+.calculator .operator:active {
+    filter: brightness(1.2);
+}
+
+.calculator .number {
+    background: rgb(45, 45, 45);
+    font-size: 1.7rem;
+}
+
+.calculator .number:active {
+    filter: brightness(1.5);
+}
+
+.calculator .other {
+    background: rgb(155, 155, 155);
+    color: black;
+    font-size: 1.3rem;
+}
+
+.calculator .other:active {
+    filter: brightness(1.2);
+}
+
+.calculator .ac {
+    grid-area: ac;
+}
+
+.calculator .negative {
+    grid-area: negative;
+}
+
+.calculator .percentage {
+    grid-area: percentage;
+}
+
+.calculator .split {
+    grid-area: split;
+}
+
+.calculator .number.n0 {
+    place-content: center flex-start;
+    padding-left: 1.35rem;
+}
+
+.calculator .equals {
+    grid-area: equals;
+}
+
+.calculator .comma {
+    grid-area: comma;
+}
+
+.calculator .multiply img,
+.calculator .minus img,
+.calculator .plus img {
+    filter: invert(1);
+}
+
+.calculator .ac {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.calculator .percentage {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.calculator .split {
+    font-size: 2.2rem;
+}

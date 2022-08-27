@@ -8,3 +8,7 @@
     transform: translateX(-50%);
     border-radius: 1rem;
 }
+
+.home-button.dark-mode {
+    filter: invert(1);
+}

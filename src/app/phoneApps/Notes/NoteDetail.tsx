@@ -4,6 +4,7 @@ import { ChangeEventHandler, useEffect, useId, useRef, useState } from 'react';
 import SafeArea from '../../structural/SafeArea/SafeArea';
 import chevronLeft from 'assets/images/system-icons/chevron_left_notes.png';
 import { Note } from './Note';
+import PhoneAppScreen from '../../structural/PhoneAppScreen/PhoneAppScreen';
 
 const NoteDetail = ({ note, onDone }: {
   note?: Note;
@@ -45,7 +46,7 @@ const NoteDetail = ({ note, onDone }: {
 
   return (
     <div className='note-detail'>
-      <SafeArea>
+      <PhoneAppScreen>
         <div className='toolbar'>
           <div className='back' onClick={() => navigate(-1)}>
             <img
@@ -71,7 +72,7 @@ const NoteDetail = ({ note, onDone }: {
           onFocus={() => setShowSubmit(true)}
         >
         </textarea>
-      </SafeArea>
+      </PhoneAppScreen>
     </div>
   );
 };

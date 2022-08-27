@@ -8,6 +8,7 @@ import searchIcon from 'assets/images/system-icons/search.png';
 import NoteRow from './NoteRow';
 import { Note } from './Note';
 import { useCallback, useMemo, useState } from 'react';
+import PhoneAppScreen from '../../structural/PhoneAppScreen/PhoneAppScreen';
 
 const NotesList = ({ notes, onSelect, onDelete }: {
   notes: ReadonlyArray<Note>;
@@ -28,8 +29,8 @@ const NotesList = ({ notes, onSelect, onDelete }: {
 
   return (
     <div className='notes'>
-      <SafeArea>
-        <p className='title'>Notes</p>
+      <PhoneAppScreen>
+        <p className='app-title'>Notes</p>
 
         <div className='search'>
           <img
@@ -59,7 +60,7 @@ const NotesList = ({ notes, onSelect, onDelete }: {
             />
           ))}
         </div>
-      </SafeArea>
+      </PhoneAppScreen>
 
       <BottomBar>
         <span className='notes-count'>{notes.length || 'No'} Notes</span>
@@ -73,8 +74,6 @@ const NotesList = ({ notes, onSelect, onDelete }: {
           onClick={() => navigate('new')}
         />
       </BottomBar>
-
-      <HomeButton />
     </div>
   );
 };

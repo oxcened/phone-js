@@ -8,8 +8,5 @@
     align-items: center;
     justify-content: center;
     user-select: none;
-}
-
-.status-bar {
-    position: absolute;
+    background: #1c1c1c;
 }
