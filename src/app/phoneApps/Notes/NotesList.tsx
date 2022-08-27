@@ -1,8 +1,6 @@
 import './NotesList.css';
-import SafeArea from '../../structural/SafeArea/SafeArea';
 import { useNavigate } from 'react-router-dom';
 import BottomBar from '../../structural/BottomBar/BottomBar';
-import HomeButton from '../../structural/HomeButton/HomeButton';
 import createIcon from 'assets/images/system-icons/create_note.png';
 import searchIcon from 'assets/images/system-icons/search.png';
 import NoteRow from './NoteRow';

@@ -1,7 +1,6 @@
 import './NoteDetail.css';
 import { useNavigate } from 'react-router-dom';
 import { ChangeEventHandler, useEffect, useId, useRef, useState } from 'react';
-import SafeArea from '../../structural/SafeArea/SafeArea';
 import chevronLeft from 'assets/images/system-icons/chevron_left_notes.png';
 import { Note } from './Note';
 import PhoneAppScreen from '../../structural/PhoneAppScreen/PhoneAppScreen';
