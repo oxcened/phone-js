@@ -10,7 +10,7 @@
 }
 
 .calculator .text-container {
-    flex: 35%;
+    flex: 38%;
     display: grid;
     place-content: end;
     padding: .5rem 1rem;
@@ -19,7 +19,7 @@
 }
 
 .calculator .buttons {
-    flex: 55%;
+    flex: 62%;
     display: grid;
     grid-template-areas:
                 "ac negative percentage split"
