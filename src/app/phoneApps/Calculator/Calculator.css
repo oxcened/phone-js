@@ -19,7 +19,7 @@
 }
 
 .calculator .buttons {
-    flex: 65%;
+    flex: 55%;
     display: grid;
     grid-template-areas:
                 "ac negative percentage split"
@@ -30,11 +30,11 @@
     column-gap: .53rem;
     grid-template-columns: repeat(4, 1fr);
     margin-bottom: 2.5rem;
-    padding: 0 .4rem;
+    padding: 0 .7rem;
 }
 
 .calculator .buttons > div {
-    --size: 3.6rem;
+    --size: 3.45rem;
     height: var(--size);
     width: 100%;
     border-radius: 2rem;
