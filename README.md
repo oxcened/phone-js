@@ -1,1 +1,1 @@
-# iphone-js
+packages/core/README.md
