@@ -1,31 +1,11 @@
-.calculator {
-    height: 100%;
-    background: black;
-    color: white;
-}
-
-.calculator .safe-area {
-    display: flex;
-    flex-direction: column;
-}
-
-.calculator .text-container {
-    flex: 38%;
-    display: grid;
-    place-content: end;
-    padding: .5rem 1rem;
-    box-sizing: border-box;
-    font-size: 4rem;
-}
-
-.calculator .buttons {
+.keyboard {
     flex: 62%;
     display: grid;
     grid-template-areas:
-                "ac negative percentage split"
-                "n7 n8 n9 multiply"
-                "n4 n5 n6 minus"
-                "n1 n2 n3 plus"
+                "ac negative percentage division"
+                "n7 n8 n9 multiplication"
+                "n4 n5 n6 subtraction"
+                "n1 n2 n3 addition"
                 "n0 n0 comma equals";
     column-gap: .53rem;
     grid-template-columns: repeat(4, 1fr);
@@ -33,7 +13,7 @@
     padding: 0 .7rem;
 }
 
-.calculator .buttons > div {
+.keyboard > div {
     --size: 3.45rem;
     height: var(--size);
     width: 100%;
@@ -44,80 +24,98 @@
     align-self: center;
     box-sizing: border-box;
     cursor: pointer;
-    transition: filter 200ms;
+    transition: filter 200ms, background-color 400ms;
 }
 
-.calculator .operator {
+.keyboard .operator {
     background: #ffb23c;
     font-size: 2rem;
 }
 
-.calculator .operator:active {
+.keyboard .operator:active {
     filter: brightness(1.2);
 }
 
-.calculator .number {
+.keyboard .number {
     background: rgb(45, 45, 45);
     font-size: 1.7rem;
 }
 
-.calculator .number:active {
+.keyboard .number:active {
     filter: brightness(1.5);
 }
 
-.calculator .other {
+.keyboard .other {
     background: rgb(155, 155, 155);
     color: black;
     font-size: 1.3rem;
 }
 
-.calculator .other:active {
+.keyboard .other:active {
     filter: brightness(1.2);
 }
 
-.calculator .equals,
-.calculator .comma,
-.calculator .split {
+.keyboard .equals,
+.keyboard .comma,
+.keyboard .division {
     padding-bottom: .4rem;
 }
 
-.calculator .multiply img,
-.calculator .minus img,
-.calculator .plus img {
+.keyboard .multiplication img,
+.keyboard .subtraction img,
+.keyboard .addition img {
     filter: invert(1);
 }
 
-.calculator .ac {
+.keyboard .ac {
     grid-area: ac;
     font-weight: 500;
     font-size: 1.4rem;
 }
 
-.calculator .negative {
+.keyboard .negative {
     grid-area: negative;
 }
 
-.calculator .percentage {
+.keyboard .percentage {
     grid-area: percentage;
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.calculator .split {
-    grid-area: split;
+.keyboard .division {
+    grid-area: division;
     font-size: 2.2rem;
 }
 
-.calculator .equals {
+.keyboard .equals {
     grid-area: equals;
 }
 
-.calculator .comma {
+.keyboard .comma {
     grid-area: comma;
     padding-top: .3rem;
 }
 
-.calculator .number.n0 {
+.keyboard .number.n0 {
     place-content: center flex-start;
     padding-left: 1.35rem;
+}
+
+.keyboard .operator.active {
+    background-color: white;
+    color: #ffb23c;
+}
+
+.keyboard .operator.active > img {
+    filter: invert(82%) sepia(18%) saturate(4406%) hue-rotate(330deg) brightness(108%) contrast(101%);
+}
+
+.keyboard > .disable {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.keyboard > .disable:active {
+    filter: unset;
 }

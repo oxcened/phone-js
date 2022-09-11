@@ -1,6 +1,6 @@
 import './NotesList.css';
 import { useNavigate } from 'react-router-dom';
-import createIcon from '../../assets/create_note.png';
+import createIcon from '../../../assets/create_note.png';
 import searchIcon from '@phone-js/utils/src/assets/search.png';
 import NoteRow from '../NoteRow/NoteRow';
 import { Note } from '../../models/Note';

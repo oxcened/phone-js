@@ -1,0 +1,10 @@
+.calculator {
+    height: 100%;
+    background: black;
+    color: white;
+}
+
+.calculator .safe-area {
+    display: flex;
+    flex-direction: column;
+}
