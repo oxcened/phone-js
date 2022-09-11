@@ -8,10 +8,22 @@ jobs:
     if: '${{ github.event.pull_request.head.repo.full_name == github.repository }}'
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.14.0'
+
+      - name: Install yarn
+        run: npm install -g yarn
+
       - uses: actions/checkout@v2
-      - run: npm ci && npm run build
+
+      - run: yarn install
+
+      - run: yarn build
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_IPHONE_JS }}'
           projectId: iphone-js
+          entryPoint: './packages/core/'
