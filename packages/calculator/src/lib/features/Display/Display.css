@@ -1,0 +1,12 @@
+.display {
+    flex: 38%;
+    display: grid;
+    place-content: end;
+    margin: .5rem 1rem;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+.display span {
+    transform-origin: bottom right;
+}
