@@ -6,16 +6,18 @@ export const useCalculator = () => {
   const [secondNum, setSecondNum] = useState<number>();
   const [operation, setOperation] = useState<OperationKey>();
   const [trailingComma, setTrailingComma] = useState(false);
+  const [trailingZeroes, setTrailingZeroes] = useState(0);
   const [isOverrideFirstNum, setOverrideFirstNum] = useState(false);
   const [isOverrideSecondNum, setOverrideSecondNum] = useState(false);
 
   const secondNumExists = secondNum !== undefined;
   const currentNum = secondNumExists ? secondNum : firstNum;
-  const currentNumAtMaxLength = currentNum.toString().replace('.', '').length > 8;
+  const currentNumAtMaxLength = (currentNum.toString().replace('.', '').length + trailingZeroes) > 8;
   const shouldBlockNewInput = currentNumAtMaxLength && !isOverrideFirstNum && !isOverrideSecondNum;
   const displayedText = secondNumExists ? secondNum : firstNum;
   const activeOperation = isOverrideSecondNum ? operation : undefined;
   const isClearCurrentNumber = getIsClearCurrentNumber(firstNum, isOverrideFirstNum, isOverrideSecondNum, trailingComma, secondNum);
+  const currentNumIsDecimal = currentNum.toString().includes('.');
 
   const onKeyPress = (key: Key) => {
     if (isNumberKey(key)) {
@@ -30,20 +32,27 @@ export const useCalculator = () => {
   const onNumberPress = (key: NumberKey) => {
     if (shouldBlockNewInput) return;
 
+    const shouldAddZero = (currentNumIsDecimal || trailingComma) && key === '0';
+
     if (isOverrideFirstNum) {
       setFirstNum(getOverriddenNumber(key));
       setOverrideFirstNum(false);
+    } else if (shouldAddZero && !operation) {
+      setTrailingZeroes(state => state + 1);
     } else if (!operation) {
-      setFirstNum(prevNum => getAppendedNumber(prevNum, key, trailingComma));
+      setFirstNum(prevNum => getAppendedNumber(prevNum, key, trailingComma, trailingZeroes));
     } else if (isOverrideSecondNum) {
       setSecondNum(getOverriddenNumber(key));
       setOverrideSecondNum(false);
+    } else if (shouldAddZero) {
+      setTrailingZeroes(state => state + 1);
     } else {
-      setSecondNum(prevNum => getAppendedNumber(prevNum, key, trailingComma));
+      setSecondNum(prevNum => getAppendedNumber(prevNum, key, trailingComma, trailingZeroes));
     }
 
-    if (trailingComma) {
+    if (!shouldAddZero) {
       setTrailingComma(false);
+      setTrailingZeroes(0);
     }
   };
 
@@ -68,6 +77,7 @@ export const useCalculator = () => {
     setFirstNum(result);
     setOperation(undefined);
     setTrailingComma(false);
+    setTrailingZeroes(0);
     setOverrideFirstNum(true);
 
     if (clearSecondNum) {
@@ -115,14 +125,15 @@ export const useCalculator = () => {
     }
 
     setTrailingComma(false);
+    setTrailingZeroes(0);
   };
 
   const onCommaPress = () => {
     if (shouldBlockNewInput) return;
 
-    const currentNumIsDecimal = currentNum.toString().includes('.');
+    const shouldAddComma = isOverrideFirstNum || isOverrideSecondNum || !currentNumIsDecimal;
 
-    if (isOverrideFirstNum || isOverrideSecondNum || !currentNumIsDecimal) {
+    if (shouldAddComma) {
       setTrailingComma(true);
     }
 
@@ -139,6 +150,7 @@ export const useCalculator = () => {
 
   return {
     trailingComma,
+    trailingZeroes,
     isOverrideFirstNum,
     isOverrideSecondNum,
     secondNumExists,
@@ -162,8 +174,8 @@ const getOperationResult = (firstNum: number, secondNum: number, operation: Oper
   }
 };
 
-const getAppendedNumber = (prevNumber = 0, newDigit: NumberKey, trailingComma: boolean) => {
-  return parseFloat(`${prevNumber}${trailingComma ? '.' : ''}${newDigit}`)
+const getAppendedNumber = (prevNumber = 0, newDigit: NumberKey, trailingComma: boolean, trailingZeroes = 0) => {
+  return parseFloat(`${prevNumber}${trailingComma ? '.' : ''}${new Array(trailingZeroes).fill(0).join('')}${newDigit}`)
 };
 
 const getOverriddenNumber = (newDigit: NumberKey) => {

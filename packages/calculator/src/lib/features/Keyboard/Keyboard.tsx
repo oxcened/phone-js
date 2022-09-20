@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { HTMLAttributes, useMemo } from 'react';
 import multiplyIcon from '../../../assets/multiply_calculator.png';
 import minusIcon from '../../../assets/minus_calculator.png';
 import plusIcon from '../../../assets/plus_calculator.png';
@@ -32,6 +32,11 @@ const Keyboard = ({ activeOperation, isClearCurrentNumber, onKeyPress }: {
     { 'active': isActive(operation) }
   )
 
+  const getOperatorProps = (operation: OperationKey): HTMLAttributes<HTMLDivElement> => ({
+    className: getOperationClass(operation),
+    onClick: () => onKeyPress(operation)
+  });
+
   return (
     <div className='keyboard'>
       <div className='other ac' onClick={() => onKeyPress('delete')}>
@@ -44,35 +49,21 @@ const Keyboard = ({ activeOperation, isClearCurrentNumber, onKeyPress }: {
 
       <div className='other percentage disable' onClick={() => onKeyPress('percentage')}>%</div>
 
-      <div
-        className={getOperationClass('division')}
-        onClick={() => onKeyPress('division')}
-      >÷
+      <div {...getOperatorProps('division')}>÷</div>
+
+      <div {...getOperatorProps('multiplication')}>
+        <img src={multiplyIcon} height={30} alt='Multiplication' />
       </div>
 
-      <div
-        className={getOperationClass('multiplication')}
-        onClick={() => onKeyPress('multiplication')}
-      ><img src={multiplyIcon} height={30} alt='Multiplication' /></div>
+      <div {...getOperatorProps('subtraction')}>
+        <img src={minusIcon} height={25} alt='Subtraction' />
+      </div>
 
-      <div
-        className={getOperationClass('subtraction')}
-        onClick={() => onKeyPress('subtraction')}
-      ><img src={minusIcon} height={25} alt='Subtraction' /></div>
-
-      <div
-        className={getOperationClass('addition')}
-        onClick={() => onKeyPress('addition')}
-      >
+      <div {...getOperatorProps('addition')}>
         <img src={plusIcon} height={25} alt='Addition' />
       </div>
 
-      <div
-        className='operator equals'
-        onClick={() => onKeyPress('equals')}
-      >=
-      </div>
-
+      <div className='operator equals' onClick={() => onKeyPress('equals')}>=</div>
       <div className='number comma' onClick={() => onKeyPress('comma')}>.</div>
 
       {numberKeys}

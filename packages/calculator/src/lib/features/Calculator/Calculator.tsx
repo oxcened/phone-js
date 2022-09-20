@@ -10,13 +10,18 @@ const Calculator = () => {
     displayedText,
     activeOperation,
     isClearCurrentNumber,
+    trailingZeroes,
     onKeyPress
   } = useCalculator();
 
   return (
     <div className='calculator'>
       <PhoneAppScreen isDarkMode>
-        <Display number={displayedText} trailingComma={trailingComma} />
+        <Display
+          number={displayedText}
+          trailingComma={trailingComma}
+          trailingZeroes={trailingZeroes}
+        />
 
         <Keyboard
           onKeyPress={onKeyPress}

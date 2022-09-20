@@ -2,9 +2,10 @@ import { useEffect, useMemo } from 'react';
 import './Display.css';
 import { useScaleText } from './useScaleText';
 
-const Display = ({ number, trailingComma }: {
+const Display = ({ number, trailingComma, trailingZeroes = 0 }: {
   number: number;
   trailingComma?: boolean;
+  trailingZeroes?: number;
 }) => {
   const format = useMemo(() => {
     return new Intl.NumberFormat('en-US', {
@@ -19,14 +20,16 @@ const Display = ({ number, trailingComma }: {
 
   useEffect(() => {
     updateScale();
-  }, [formatted]);
+  }, [formatted, trailingComma, trailingZeroes]);
+
+  const mappedTrailingZeroes = new Array(trailingZeroes).fill(0);
 
   return (
     <div ref={containerRef} className='display'>
       <span
         ref={textRef}
         style={{ transform: `scale(${scale})` }}
-      >{formatted}{trailingComma ? '.' : ''}</span>
+      >{formatted}{trailingComma ? '.' : ''}{mappedTrailingZeroes}</span>
     </div>
   );
 };
