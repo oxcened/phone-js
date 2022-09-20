@@ -33,12 +33,14 @@ export const useCalculator = () => {
     if (shouldBlockNewInput) return;
 
     const shouldAddZero = (currentNumIsDecimal || trailingComma) && key === '0';
+    let resetTrailingChars = true;
 
     if (isOverrideFirstNum) {
       setFirstNum(getOverriddenNumber(key));
       setOverrideFirstNum(false);
     } else if (shouldAddZero && !operation) {
       setTrailingZeroes(state => state + 1);
+      resetTrailingChars = false;
     } else if (!operation) {
       setFirstNum(prevNum => getAppendedNumber(prevNum, key, trailingComma, trailingZeroes));
     } else if (isOverrideSecondNum) {
@@ -46,11 +48,12 @@ export const useCalculator = () => {
       setOverrideSecondNum(false);
     } else if (shouldAddZero) {
       setTrailingZeroes(state => state + 1);
+      resetTrailingChars = false;
     } else {
       setSecondNum(prevNum => getAppendedNumber(prevNum, key, trailingComma, trailingZeroes));
     }
 
-    if (!shouldAddZero) {
+    if (resetTrailingChars) {
       setTrailingComma(false);
       setTrailingZeroes(0);
     }
@@ -135,6 +138,7 @@ export const useCalculator = () => {
 
     if (shouldAddComma) {
       setTrailingComma(true);
+      setTrailingZeroes(0);
     }
 
     if (isOverrideSecondNum) {
