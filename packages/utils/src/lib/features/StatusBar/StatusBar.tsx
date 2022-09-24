@@ -1,6 +1,6 @@
 import './StatusBar.css';
-import signal from '../../assets/signal.png';
-import battery from '../../assets/battery.png';
+import signal from '../../../assets/signal.png';
+import battery from '../../../assets/battery.png';
 import Clock from './Clock';
 import classNames from 'classnames';
 
