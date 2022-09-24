@@ -7,13 +7,13 @@ import { useCalculator } from './useCalculator';
 const Calculator = () => {
   const {
     trailingComma,
+    trailingZeroes,
     displayedText,
     activeOperation,
     isClearCurrentNumber,
-    trailingZeroes,
     onKeyPress
   } = useCalculator();
-
+  
   return (
     <div className='calculator'>
       <PhoneAppScreen isDarkMode>
