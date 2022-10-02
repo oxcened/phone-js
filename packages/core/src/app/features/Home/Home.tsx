@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { useNavigate } from 'react-router-dom';
 import { useMemo } from 'react';
-import phoneApps from '../../features/phoneApps';
+import phoneApps from '../../features/PhoneApp/phoneApps';
 import videoCall from 'assets/images/app-icons/app-icon-7.png';
 import calendar from 'assets/images/app-icons/app-icon-15.png';
 import photos from 'assets/images/app-icons/app-icon-13.png';
