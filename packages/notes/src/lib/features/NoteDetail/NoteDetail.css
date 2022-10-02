@@ -8,6 +8,7 @@
     border: none;
     outline: none;
     padding: 1rem 1rem 0;
+    box-sizing: border-box;
 }
 
 .note-detail .toolbar {
