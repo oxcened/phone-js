@@ -4,7 +4,7 @@
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fiphone-js.web.app%2F)](https://iphone-js.web.app/)
 
 ![screenshot 1](https://iphone-js.web.app/screenshot1.png)
-![screenshot 2](https://iphone-js.web.app/screenshot1.png)
+![screenshot 2](https://iphone-js.web.app/screenshot2.png)
 
 I have always been fascinated by all things *meta* so I got myself into building one!
 
