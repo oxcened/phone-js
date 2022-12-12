@@ -3,12 +3,8 @@
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Foxcened%2Fiphone-js%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/oxcened/iphone-js/goto?ref=master)
 [![Website Status](https://img.shields.io/website?url=https%3A%2F%2Fiphone-js.web.app%2F)](https://iphone-js.web.app/)
 
-<table>
-  <tr>
-    <td><img src="https://iphone-js.web.app/screenshot1.png" height="500"/></td>
-    <td><img src="https://iphone-js.web.app/screenshot2.png" height="500"/></td>
-  </tr>
-</table>
+![screenshot 1](https://iphone-js.web.app/screenshot1.png)
+![screenshot 2](https://iphone-js.web.app/screenshot2.png)
 
 I have always been fascinated by all things *meta* so I got myself into building one!
 
