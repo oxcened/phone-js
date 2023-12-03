@@ -124,7 +124,7 @@ In this project, the tool used to achieve this is [yarn workspaces](https://clas
 
 Yarn workspaces does many things:
 
-- It links npm packages contained in the workspaces. This enables us to have a great DX, as we can run all the packages
+- It links npm packages contained in the monorepo. This enables us to have a great DX, as we can run all the packages
   in development mode at the same time and see how they behave together as we code.
 - It provides CLI commands that are very useful to manage monorepos. For instance, the `yarn build` script of this
   project runs `yarn workspaces foreach -pt run build`, which builds all the packages in the monorepo based on the
@@ -139,7 +139,7 @@ The monorepo contains the following types of packages:
 - The `core` package - contains the code that makes up the phone and binds all the "app" packages together.
   Apps are plugged-in inside [phoneApps.ts](/packages/core/src/app/features/PhoneApp/phoneApps.ts).
 - The `app` packages - each package is an "app" that takes place into the phone app gallery.
-- The `utils` package - contains common utils used to code the "apps".
+- The `utils` package - contains common utils helpful to code the "apps".
 
 ## Scalability
 
@@ -147,7 +147,7 @@ This project is powered by React Router v6. All the packages have access to the 
 its own routes.
 
 Each and every "app" is lazy loaded. This is incredibly important because it means that, no matter how many apps get plugged-in,
-loading times remain constant.
+loading time remains constant.
 
 ## Yarn PnP
 
