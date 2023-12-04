@@ -21,7 +21,8 @@ A monorepo hosting a React-based iPhone, complete with apps as npm packages.
 
 ## Introduction
 
-Phone.js was inspired by the amazing project of Tanner Villarete, [iPod.js](https://github.com/tvillarete/ipod-classic-js).
+Phone.js was inspired by the amazing project of Tanner
+Villarete, [iPod.js](https://github.com/tvillarete/ipod-classic-js).
 
 The intention behind this project was not only to have fun creating something peculiar,
 but also to be challenged by the CSS styling involved.
@@ -119,7 +120,8 @@ Quoting babel:
 
 ### Yarn workspaces
 
-In this project, the tool used to achieve this is [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/).
+In this project, the tool used to achieve this
+is [yarn workspaces](https://classic.yarnpkg.com/lang/en/docs/workspaces/).
 
 Yarn workspaces does many things:
 
@@ -140,22 +142,73 @@ The monorepo contains the following types of packages:
 - The `app` packages - each package is an "app" that takes place into the phone app gallery.
 - The `utils` package - contains common utils helpful to code the "apps".
 
+Each "app" packages needs to export an object literal containing the following properties:
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Identifier of the app. Needs to be unique.</td>
+<td>string</td>
+<td>notes</td>
+</tr>
+<tr>
+<td>element</td>
+<td>Lazy loaded import of the root component.</td>
+<td>LazyExoticComponent</td>
+<td>lazy(() => import('@phone-js/notes'))</td>
+</tr>
+<tr>
+<td>iconPath</td>
+<td>Path to the icon of the application.</td>
+<td>string</td>
+<td>import launcherIcon from './assets/app-icon.png';</td>
+</tr>
+<tr>
+<td>title</td>
+<td>User facing name of the app.</td>
+<td>string</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>route</td>
+<td>Route that wraps this app.</td>
+<td>string</td>
+<td>notes/*</td>
+</tr>
+<tr>
+<td>destination</td>
+<td>Initial route.</td>
+<td>string</td>
+<td>notes</td>
+</tr>
+</tbody>
+</table>
+
 ## Scalability
 
-This project is powered by React Router v6. All the packages have access to the router and each "app" package is able to have
-its own routes.
+This project is powered by React Router v6. All the packages have access to the router and each "app" package is able to
+have its own routes.
 
-Each and every "app" is lazy loaded. This is incredibly important because it means that, no matter how many apps get plugged-in,
-loading time remains constant.
+Each and every "app" is lazy loaded. This is incredibly important because it means that, no matter how many apps get
+plugged-in, loading time remains constant.
 
 ## Yarn PnP
 
 This monorepo makes use of Yarn Plug'n'Play. Quoting Yarn:
 
 > The way Yarn PnP works, it tells Yarn to generate a single Node.js loader file
-> in place of the typical node_modules folder. This loader file, named .pnp.cjs, contains all information about your project's
-> dependency tree, informing your tools as to the location of the packages on the disk and letting them know how to resolve
-> require and import calls.
+> in place of the typical node_modules folder. This loader file, named .pnp.cjs, contains all information about your
+> project's dependency tree, informing your tools as to the location of the packages on the disk and letting them know
+> how to resolve require and import calls.
 
 This system brings many advantages, which you can read [here.](https://yarnpkg.com/features/pnp#what-are-the-advantages)
 
