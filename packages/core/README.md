@@ -11,7 +11,6 @@ A monorepo hosting a React-based iPhone, complete with apps as npm packages.
 
 - [Introduction](#introduction)
 - [Demo](#demo)
-- [Features](#features)
 - [How to use](#how-to-use)
 - [Tech Stack](#tech-stack)
 - [Monorepo](#monorepo)
