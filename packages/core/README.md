@@ -164,7 +164,7 @@ Each "app" packages needs to export an object literal containing the following p
 <td>element</td>
 <td>Lazy loaded import of the root component.</td>
 <td>LazyExoticComponent</td>
-<td>lazy(() => import('@phone-js/notes'))</td>
+<td>lazy(() => import('./lib/features/Notes/Notes'))</td>
 </tr>
 <tr>
 <td>iconPath</td>
